@@ -1,0 +1,505 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+img, svg { display: block; max-width: 100%; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ШАПКА */
+.header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 25px 0;
+    color: #fff;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo__icon { width: 44px; height: 44px; }
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav__list { display: flex; gap: 30px; }
+
+.nav__link {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: opacity 0.25s;
+}
+
+.nav__link:hover { opacity: 0.7; }
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 24px;
+}
+
+.burger span {
+    height: 2px;
+    background: #fff;
+    display: block;
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 140px 0 100px;
+    background: linear-gradient(160deg, #6d4d3a 0%, #b86b5c 70%, #d49478 100%);
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(60, 30, 40, 0.35);
+    pointer-events: none;
+}
+
+.hero__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.hero__pre {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.hero__title {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+.hero__note {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-top: 12px;
+}
+
+.hero__note a { border-bottom: 1px solid #fff; }
+
+.btn {
+    display: inline-block;
+    padding: 14px 44px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background 0.25s, color 0.25s;
+}
+
+.btn--outline {
+    border: 2px solid #fff;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.btn--outline:hover {
+    background: #fff;
+    color: #333;
+}
+
+/* ПРЕИМУЩЕСТВА */
+.features { background: #fff; padding: 80px 0; }
+
+.features__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.feature {
+    flex: 1 1 260px;
+    max-width: 340px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.feature__icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature__title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #333;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.feature__title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: #d14a5a;
+}
+
+.feature__text {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.7;
+}
+
+/* О ПРИЛОЖЕНИИ */
+.app { background: #f7f7f7; padding: 80px 0; }
+
+.app__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+}
+
+.app__image {
+    flex: 1 1 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.app__phone {
+    width: 260px;
+    height: 500px;
+    border: 12px solid #fff;
+    border-radius: 36px;
+    background: linear-gradient(160deg, #8b4a4a 0%, #b86b5c 60%, #d49478 100%);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.app__phone-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.app__phone-logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+}
+
+.app__phone-text {
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.app__phone-text strong {
+    font-size: 1.6rem;
+    display: block;
+    letter-spacing: 3px;
+}
+
+.app__text {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.app__title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.app__text p { font-size: 14px; color: #888; line-height: 1.8; }
+
+.app__stores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.25s;
+}
+
+.store-btn:hover { background: #111; }
+
+.store-btn__icon { font-size: 20px; }
+
+.store-btn__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.store-btn__text small { font-size: 9px; opacity: 0.85; }
+.store-btn__text strong { font-size: 14px; }
+
+/* ОТЗЫВ */
+.testimonial {
+    background: #4a3540;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.testimonial__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ddd;
+    border: 3px solid #fff;
+}
+
+.testimonial__quote {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.testimonial__author {
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* КУХНИ */
+.cuisines { background: #fff; padding: 60px 0 0; }
+
+.cuisines__title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.cuisines__grid { display: flex; flex-wrap: wrap; }
+
+.cuisine {
+    flex: 1 1 20%;
+    min-width: 180px;
+    aspect-ratio: 1 / 1;
+    background: #8b4a4a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.cuisine:nth-child(2n) { background-color: #b86b5c; }
+.cuisine:nth-child(3n) { background-color: #d49478; }
+.cuisine:nth-child(5n) { background-color: #6d4d3a; }
+
+.cuisine::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.cuisine:hover::before { background: rgba(0, 0, 0, 0.45); }
+
+.cuisine__count,
+.cuisine__name {
+    position: relative;
+    z-index: 2;
+}
+
+.cuisine__count { font-size: 11px; letter-spacing: 1px; opacity: 0.9; }
+
+.cuisine__name {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* СТАТИСТИКА */
+.stats {
+    background: #fff;
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+}
+
+.stats__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.stat {
+    flex: 1 1 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.stat__value { font-size: 2rem; font-weight: 800; color: #333; }
+.stat__label { font-size: 12px; color: #999; letter-spacing: 0.5px; }
+
+/* ПОДВАЛ */
+.footer {
+    background: #fafafa;
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.footer__design a {
+    color: #666;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer__design a:hover { color: #d14a5a; }
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 900px) {
+    .app__inner { gap: 40px; }
+    .cuisine { flex: 1 1 33.333%; }
+}
+
+@media (max-width: 600px) {
+    .container { padding: 0 20px; }
+
+    .burger { display: flex; }
+
+    .nav__list {
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px 24px;
+        border-radius: 8px;
+        display: none;
+        gap: 16px;
+    }
+
+    .nav--open .nav__list { display: flex; }
+
+    .nav__link { font-size: 12px; }
+
+    .hero { min-height: 70vh; padding: 100px 0 60px; }
+    .hero__pre { font-size: 1.1rem; }
+
+    .features { padding: 50px 0; }
+    .app { padding: 50px 0; }
+
+    .app__phone { width: 220px; height: 420px; }
+
+    .cuisine { flex: 1 1 50%; min-width: 140px; }
+    .cuisine__name { font-size: 16px; letter-spacing: 2px; }
+
+    .stat__value { font-size: 1.5rem; }
+
+    .footer__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUDI — Find Your Favorite Recipes</title>
+    <meta name="description" content="FUDI — discover 23,000+ recipes from world cuisines.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <svg class="logo__icon" viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M10 4 L10 20 M8 4 L8 12 M12 4 L12 12"/>
+                    <path d="M26 4 L26 20 M26 4 Q32 4 32 12 L26 14"/>
+                    <line x1="6" y1="34" x2="34" y2="34"/>
+                </svg>
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#login" class="nav__link">LOG IN</a></li>
+                    <li><a href="#signup" class="nav__link">SIGN UP</a></li>
+                </ul>
+                <button type="button" class="burger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero__overlay"></div>
+        <div class="container hero__inner">
+            <p class="hero__pre">Find your Favorite</p>
+            <h1 class="hero__title">RECIPES</h1>
+            <a href="#cuisines" class="btn btn--outline">GET STARTED</a>
+            <p class="hero__note">OR SEND US YOUR OWN RECIPES AND <a href="#signup">GET REWARDED!</a></p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container features__inner">
+            <article class="feature">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 60 60" width="60" height="60" fill="none" stroke="#555" stroke-width="1.5">
+                        <circle cx="30" cy="30" r="28"/>
+                        <path d="M18 26 h24 M20 26 v10 h20 v-10 M24 32 h12"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">GET INSPIRED</h3>
+                <p class="feature__text">Discover thousands of recipes from around the world and find your next favorite dish.</p>
+            </article>
+
+            <article class="feature">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 60 60" width="60" height="60" fill="none" stroke="#555" stroke-width="1.5">
+                        <circle cx="30" cy="30" r="28"/>
+                        <path d="M20 34 h20 M22 34 v8 h16 v-8 M24 30 v-6 h12 v6"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">GET REWARDED</h3>
+                <p class="feature__text">Share your own recipes with the community and earn rewards for the best ones.</p>
+            </article>
+
+            <article class="feature">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 60 60" width="60" height="60" fill="none" stroke="#555" stroke-width="1.5">
+                        <circle cx="30" cy="30" r="28"/>
+                        <circle cx="30" cy="24" r="5"/>
+                        <path d="M18 44 q12 -14 24 0"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">GET SOCIAL</h3>
+                <p class="feature__text">Follow other food lovers, comment, like and build your own cooking community.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="app">
+        <div class="container app__inner">
+            <div class="app__image">
+                <div class="app__phone">
+                    <div class="app__phone-screen">
+                        <span class="app__phone-logo">FUDI</span>
+                        <span class="app__phone-text">Find your Favorite<br><strong>RECIPES</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app__text">
+                <h2 class="app__title">INTRODUCING THE FUDI APP</h2>
+                <p>Thousands of recipes at your fingertips. Search by ingredient, cuisine, or cooking time and get step-by-step instructions.</p>
+                <p>Save your favorites, create shopping lists, and share your own recipes with a community of food lovers.</p>
+                <p>Available on iOS and Android — free to download.</p>
+
+                <div class="app__stores">
+                    <a href="#" class="store-btn">
+                        <span class="store-btn__icon">🍎</span>
+                        <span class="store-btn__text">
+                            <small>Available on the</small>
+                            <strong>App Store</strong>
+                        </span>
+                    </a>
+                    <a href="#" class="store-btn">
+                        <span class="store-btn__icon">▶</span>
+                        <span class="store-btn__text">
+                            <small>Get it on</small>
+                            <strong>Google Play</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container testimonial__inner">
+            <div class="testimonial__avatar"></div>
+            <blockquote class="testimonial__quote">
+                “I am so happy because I found this recipe, and it just made my life easier.<br>
+                Thanks so much for sharing!”
+            </blockquote>
+            <p class="testimonial__author">— Michael Dawson, San Francisco, CA —</p>
+        </div>
+    </section>
+
+    <section id="cuisines" class="cuisines">
+        <div class="container">
+            <h2 class="cuisines__title">BROWSE BY CUISINES</h2>
+        </div>
+
+        <div class="cuisines__grid">
+            <a href="#italian" class="cuisine"><span class="cuisine__count">327 Recipes</span><span class="cuisine__name">ITALIAN</span></a>
+            <a href="#indian" class="cuisine"><span class="cuisine__count">856 Recipes</span><span class="cuisine__name">INDIAN</span></a>
+            <a href="#french" class="cuisine"><span class="cuisine__count">27 Recipes</span><span class="cuisine__name">FRENCH</span></a>
+            <a href="#steakhouse" class="cuisine"><span class="cuisine__count">174 Recipes</span><span class="cuisine__name">STEAKHOUSE</span></a>
+            <a href="#seafood" class="cuisine"><span class="cuisine__count">731 Recipes</span><span class="cuisine__name">SEAFOOD</span></a>
+            <a href="#sushi" class="cuisine"><span class="cuisine__count">237 Recipes</span><span class="cuisine__name">SUSHI</span></a>
+            <a href="#mexican" class="cuisine"><span class="cuisine__count">529 Recipes</span><span class="cuisine__name">MEXICAN</span></a>
+            <a href="#chinese" class="cuisine"><span class="cuisine__count">145 Recipes</span><span class="cuisine__name">CHINESE</span></a>
+            <a href="#pizza" class="cuisine"><span class="cuisine__count">327 Recipes</span><span class="cuisine__name">PIZZA</span></a>
+            <a href="#american" class="cuisine"><span class="cuisine__count">1,437 Recipes</span><span class="cuisine__name">AMERICAN</span></a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stats__inner">
+            <div class="stat"><span class="stat__value">23,567</span><span class="stat__label">Recipes Available</span></div>
+            <div class="stat"><span class="stat__value">431,729</span><span class="stat__label">Active Users</span></div>
+            <div class="stat"><span class="stat__value">892,173</span><span class="stat__label">Positive Reviews</span></div>
+            <div class="stat"><span class="stat__value">56,581</span><span class="stat__label">Photos &amp; Videos</span></div>
+            <div class="stat"><span class="stat__value">3,182</span><span class="stat__label">Spices and Herbs</span></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">© 2026 Fudi. All Rights Reserved.</p>
+            <p class="footer__design">DESIGN BY: <a href="#">WWW.BEKADES.COM</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
